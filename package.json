@@ -1,6 +1,16 @@
 {
   "name": "vue-autolinker",
   "version": "1.0.0",
+  "homepage": "https://github.com/kculmback/vue-autolinker",
+  "author": {
+    "name": "Kasey Culmback",
+    "url": "https://www.kaseyculmback.com",
+    "email": "me@kaseyculmback.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kculmback/vue-autolinker"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --dest docs",
