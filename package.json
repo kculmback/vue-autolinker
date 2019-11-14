@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --dest site",
+    "build": "vue-cli-service build --dest docs",
     "build:lib": "vue-cli-service build --target lib --name vue-autolinker ./src/directives/autolinker.js",
     "lint": "vue-cli-service lint"
   },
