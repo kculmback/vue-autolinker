@@ -1,14 +1,19 @@
 {
   "name": "vue-autolinker",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --dest site",
+    "build:lib": "vue-cli-service build --target lib --name vue-autolinker ./src/directives/autolinker.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "dist/vue-autolinker.common.js",
+  "files": [
+    "dist/*",
+    "*.json"
+  ],
   "dependencies": {
-    "core-js": "^3.3.2",
+    "autolinker": "^3.11.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
