@@ -1,24 +1,53 @@
 # vue-autolinker
 
-## Project setup
+A simple vue-directive wrapper around [Autolinker.js](https://github.com/gregjacobs/Autolinker.js).
+
+## Install
+
 ```
-npm install
+npm install autolinker --save
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+## Setup
+
+In your entry file:
+
+``` js
+import Vue from 'vue'
+import autolinker, { AUTOLINKER_NAME } from 'vue-autolinker'
+
+// AUTOLINKER_NAME is optional. It is a string: 'autolinker'.
+Vue.directive(AUTOLINKER_NAME, autolinker)
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+## Usage
+
+``` js
+<template>
+  <div id="app">
+      <p v-autolinker="exampleOne"></p>
+      <p v-autolinker:[options]="exampleTwo"></p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app',
+  data() {
+    return {
+      exampleOne:
+        'Text with a link (https://github.com/gregjacobs/Autolinker.js).',
+      exampleTwo:
+        'Text with a link (vuejs.com), a mention (@vuejs), and a hashtag (#vue).',
+      options: {
+        mention: 'twitter',
+        hashtag: 'twitter',
+      },
+    }
+  },
+}
+</script>
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Options
+You can pass options to Autolinker.js using a Vue directive argument. All options are automatically passed to Autoprefixer.js. You can available options [here](https://github.com/gregjacobs/Autolinker.js#options).
